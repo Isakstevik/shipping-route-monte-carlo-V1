@@ -1,0 +1,63 @@
+month,assessment_date,wci_shanghai_rotterdam_usd_per_feu,source_url,note
+2021-07,2021-07-01,12203,https://www.hellenicshippingnews.com/?p=876625,Derived: 8 Jul 2021 rate 12795 minus 592 weekly increase
+2021-08,2021-08-05,13628,https://www.hellenicshippingnews.com/drewry-world-container-index-now-370-higher-than-last-year/,
+2021-09,2021-09-02,14074,https://www.hellenicshippingnews.com/?p=884848,
+2021-10,2021-10-07,14807,https://www.hellenicshippingnews.com/?p=890719,All-time high for this route in WCI history
+2021-11,2021-11-04,13801,https://www.hellenicshippingnews.com/?p=897596,"Approximate: 18 Nov 2021 rate 13400 plus 401 weekly decrease gives 11 Nov 13801, and 11 Nov report states rate was flat vs 4 Nov"
+2021-12,2021-12-02,13400,https://www.hellenicshippingnews.com/?p=899809,"Approximate: reports for 25 Nov - 23 Dec state rate flat. Last stated value 13400 (18 Nov), next 13658 (6 Jan 2022)"
+2022-01,2022-01-06,13658,https://www.hellenicshippingnews.com/drewry-world-container-index-up-1-4-this-week/,Derived: 13 Jan 2022 rate 14028 minus 370 weekly increase
+2022-02,2022-02-03,13687,https://www.hellenicshippingnews.com/drewry-world-container-index-79-higher-than-same-week-of-2021/,Approximate: report states rate hovered at previous week's level (27 Jan 2022: 13687)
+2022-03,2022-03-03,12968,https://www.freightender.com/world-container-index-wci/,
+2022-04,2022-04-07,10845,https://www.freightender.com/world-container-index-wci/,
+2022-05,2022-05-05,9987,https://www.freightender.com/world-container-index-wci/,
+2022-06,2022-06-02,9736,https://www.freightender.com/world-container-index-wci/,
+2022-07,2022-07-07,9280,https://www.freightender.com/world-container-index-wci/,
+2022-08,2022-08-04,8939,https://www.freightender.com/world-container-index-wci/,
+2022-09,2022-09-01,7583,https://www.freightender.com/world-container-index-wci/,
+2022-10,2022-10-06,4724,https://www.freightender.com/world-container-index-wci/,
+2022-11,2022-11-03,3684,https://www.freightender.com/world-container-index-wci/,
+2022-12,2022-12-01,1965,https://www.freightender.com/world-container-index-wci/,
+2023-01,2023-01-05,1874,https://www.hellenicshippingnews.com/?p=962749,
+2023-02,2023-02-02,1732,https://www.hellenicshippingnews.com/drewry-world-container-index-down-1-this-past-week/,
+2023-03,2023-03-02,1593,https://airfreight.news/articles/full/drewry-world-container-index-march-2nd,
+2023-04,2023-04-06,1532,https://www.hellenicshippingnews.com/?p=977955,
+2023-05,2023-05-04,1645,https://www.freightender.com/world-container-index-wci/,Exact value from weekly table (replaces earlier approximation of 1638)
+2023-06,2023-06-01,1543,https://www.hellenicshippingnews.com/?p=986345,
+2023-07,2023-07-06,1345,https://www.hellenicshippingnews.com/drewry-world-container-index-marginally-down-last-week-78-7-compared-to-last-year/,Derived: 13 Jul 2023 rate 1291 plus 54 weekly decrease
+2023-08,2023-08-03,1620,https://www.hellenicshippingnews.com/?p=997980,Derived: 10 Aug 2023 rate 1673 minus 53 weekly increase
+2023-09,2023-09-07,1449,https://www.freshplaza.com/north-america/article/9557831/drewry-s-composite-world-container-index-down-3-4-this-week/,
+2023-10,2023-10-05,1027,https://www.hellenicshippingnews.com/drewry-world-container-index-down-1-1/,
+2023-11,2023-11-02,1048,https://www.hellenicshippingnews.com/drewry-world-container-index-up-by-5/,
+2023-12,2023-12-07,1343,https://www.hellenicshippingnews.com/?p=1018379,
+2024-01,2024-01-04,3577,https://www.hellenicshippingnews.com/drewry-world-container-index-up-6-1-last-week/,
+2024-02,2024-02-01,4661,https://www.hellenicshippingnews.com/drewry-world-container-index-down-by-4-last-week/,
+2024-03,2024-03-07,3650,https://www.hellenicshippingnews.com/drewry-world-container-index-down-6-last-week/,
+2024-04,2024-04-04,3078,https://www.hellenicshippingnews.com/drewry-world-container-index-down-by-3-last-week-2/,
+2024-05,2024-05-02,3103,https://www.hellenicshippingnews.com/drewry-world-container-index-rose-last-week/,
+2024-06,2024-06-06,6032,https://www.hellenicshippingnews.com/?p=1043135,
+2024-07,2024-07-04,8056,https://www.hellenicshippingnews.com/?p=1046883,
+2024-08,2024-08-01,8200,https://www.hellenicshippingnews.com/drewry-world-container-index-down-1-last-week-3/,
+2024-09,2024-09-05,6219,https://www.hellenicshippingnews.com/?p=1054732,
+2024-10,2024-10-03,3815,https://www.hellenicshippingnews.com/drewry-world-container-index-down-5-last-week-2/,
+2024-11,2024-11-07,3954,https://www.hellenicshippingnews.com/?p=1063234,
+2024-12,2024-12-05,4775,https://magazine.joc.com/january-6-2025/0656899001734714304/p111,Derived: 12 Dec 2024 rate 4855 minus 80 weekly increase
+2025-01,2025-01-02,4774,https://www.hellenicshippingnews.com/drewry-world-container-index-up-by-3-last-week/,
+2025-02,2025-02-06,3125,https://cyprusshippingnews.com/2025/02/12/world-container-index-06-feb-by-drewry/,
+2025-03,2025-03-06,2636,https://www.freshplaza.com/north-america/article/9711665/drewry-s-world-container-index-decreased-3-to-2-541-per-40ft-container/,
+2025-04,2025-04-03,2304,https://www.hellenicshippingnews.com/?p=1084880,Derived: 10 Apr 2025 rate 2392 minus 88 weekly increase
+2025-05,2025-05-01,2202,https://www.freshplaza.com/north-america/article/9728383/drewry-world-container-index-drops-3-to-2-091-per-40ft-box/,Direct value confirmed (matches earlier derivation)
+2025-06,2025-06-05,2845,https://www.mtsinsights.com/summaries/1061/,
+2025-07,2025-07-03,3468,https://www.mtsinsights.com/summaries/1066/,
+2025-08,2025-08-07,3274,https://www.fibre2fashion.com/news/textile-news/drewry-wci-drops-for-ninth-consecutive-week-on-soft-demand-304631-newsdetails.htm,Approximate: derived from 14 Aug 2025 rate 3176 and a rounded 3% weekly decrease
+2025-09,2025-09-04,2385,https://www.mtsinsights.com/summaries/4660/,
+2025-10,2025-10-02,1613,https://www.worldports.org/?p=630123,
+2025-11,2025-11-06,1962,https://indiashippingnews.com/drewry-world-container-index-up-8-last-week-3/,
+2025-12,2025-12-04,2241,https://www.mtsinsights.com/summaries/6168/,
+2026-01,2026-01-08,2840,https://cyprusshippingnews.com/2026/01/14/world-container-index-by-drewry/,First Thursday (1 Jan) was a holiday with no assessment. Second Thursday used
+2026-02,2026-02-05,2164,https://www.mtsinsights.com/summaries/7198/,
+2026-03,2026-03-05,2053,https://indiashippingnews.com/trending-news/drewry-world-container-index-gain-8-last-week/,Approximate: derived from 12 Mar 2026 rate 2443 and a rounded 19% weekly increase
+2026-04,2026-04-02,2543,https://cyprusshippingnews.com/2026/04/07/drewry-world-container-index-02-apr/,
+2026-05,2026-05-07,2170,https://magazine.joc.com/june-1-2026/0832987001779395853/p67,Derived: 14 May 2026 rate 2413 minus 243 weekly increase
+2026-06,2026-06-04,3579,https://www.mtsinsights.com/summaries/9304/,
+2026-07,2026-07-02,4698,https://www.shipuniverse.com/?p=16195,Approximate: derived from 9 Jul 2026 rate 4933 and a rounded 5% weekly increase
+2026-08,2026-08-06,4653,https://www.mtsinsights.com/summaries/10326/,
