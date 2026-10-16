@@ -18,6 +18,7 @@ One line per decision: what was decided and why. Newest at the bottom.
 - **Fuel consumption:** EU MRV 2025, container ships, zero sea time removed, 5th percentile low-exposure screen. Cleaned but not yet calibrated to vessel size.
 - **Raw vs. processed:** Raw files are never edited. Analysis notebooks write processed files, the Monte Carlo notebook only reads processed files.
 - **Which variables are stochastic (V1):** Freight rate, fuel price, utilization, delay. Everything else is hardcoded in `assumptions.csv`. Rule: only variables that are both uncertain and material are stochastic.
+- **Freight rate source:** Historical FBX11 data (Freightos) is not freely available. Replaced by the Drewry World Container Index (WCI) Shanghai → Rotterdam spot rate (USD/FEU), which is published weekly and republished in free shipping press. One observation per month (first weekly assessment of each month), Jan 2019 – Aug 2026, to match the Brent sample and allow paired sampling of freight rate and fuel price. Each value is stored with its source URL.
 
 ## Open questions
 - [ ] Reference vessel size (~7–9k TEU secondary service vs. mainline ULCV)
