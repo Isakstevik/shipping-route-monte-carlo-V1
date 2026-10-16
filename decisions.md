@@ -19,6 +19,8 @@ One line per decision: what was decided and why. Newest at the bottom.
 - **Raw vs. processed:** Raw files are never edited. Analysis notebooks write processed files, the Monte Carlo notebook only reads processed files.
 - **Which variables are stochastic (V1):** Freight rate, fuel price, utilization, delay. Everything else is hardcoded in `assumptions.csv`. Rule: only variables that are both uncertain and material are stochastic.
 - **Freight rate source:** Historical FBX11 data (Freightos) is not freely available. Replaced by the Drewry World Container Index (WCI) Shanghai → Rotterdam spot rate (USD/FEU), which is published weekly and republished in free shipping press. One observation per month (first weekly assessment of each month), Jan 2019 – Aug 2026, to match the Brent sample and allow paired sampling of freight rate and fuel price. Each value is stored with its source URL.
+- - **Freight sample period:** Jul 2021 – Aug 2026 (62 months). Free monthly WCI data before mid-2021 is too sparse to collect reliably. The sample still covers five market regimes (COVID peak, crash, 2023 trough, Red Sea crisis, normalisation). Bootstrap draws months at random, so continuity is not required.
+- **Freight data quality:** 49 values read directly, 7 derived exactly from the following week's report, 6 approximations from rounded percentages (all flagged in the note column, deviation <1% where verified).
 
 ## Open questions
 - [ ] Reference vessel size (~7–9k TEU secondary service vs. mainline ULCV)
