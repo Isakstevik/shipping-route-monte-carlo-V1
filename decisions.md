@@ -22,7 +22,7 @@ One line per decision: what was decided and why. Newest at the bottom.
 
 ## Open questions
 - [ ] Reference vessel size (~7–9k TEU secondary service vs. mainline ULCV)
-- [ ] FBX11 historical data: check Freightos free terminal (max 1 hour). Fallback: public WCI/SCFI anchor points
+- [x] FBX11 historical data: check Freightos free terminal (max 1 hour). Fallback: public WCI/SCFI anchor points
 - [ ] Does FBX11 include terminal handling? If THC is billed separately to shippers, handling cost may largely net out
 - [ ] Correlation between freight rate and fuel price (paired bootstrap if monthly FBX11 is available)
 - [ ] Spot vs. contract share of cargo
