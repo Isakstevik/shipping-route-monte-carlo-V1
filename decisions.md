@@ -23,6 +23,7 @@ One line per decision: what was decided and why. Newest at the bottom.
 - **Freight data quality:** 49 values read directly, 7 derived exactly from the following week's report, 6 approximations from rounded percentages (all flagged in the note column, deviation <1% where verified).
 - **Paired bootstrap (freight + fuel):** Each simulation draws one historical month and uses both the WCI freight rate and the Brent level from that month. Fuel price = VLSFO baseline × (Brent that month / latest Brent). P(loss): 19.51% (fuel as returns, independent) → 17.91% (fuel as levels, independent) → 17.17% (levels, paired). Pairing effect: −0.74 pp.
 - **VLSFO baseline must match Brent date:** vlsfo_baseline must be the VLSFO price observed in the same month as the latest Brent observation, otherwise all simulated fuel prices are biased.
+- **VLSFO baseline:** $822/mt, Singapore monthly average for Aug 2026 (Ship & Bunker), matching the month of the latest Brent observation. Singapore chosen because the service calls Tanjung Pelepas, adjacent to the Singapore bunkering hub. G20 average for the same month was $810/mt, so the choice has limited impact.
 
 ## Open questions
 - [ ] Reference vessel size (~7–9k TEU secondary service vs. mainline ULCV)
