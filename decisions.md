@@ -37,6 +37,7 @@ One line per decision: what was decided and why. Newest at the bottom.
 -  **Reference vessel is a class proxy:** NYK Venus operates on ONE FE1 (Laem Chabang–Cai Mep–Singapore–Rotterdam–Hamburg), not from Shanghai. The model keeps the Shanghai–Rotterdam route to match the WCI freight data, and uses NYK Venus as representative of a 9,000 TEU non-eco vessel.
 - **Sea days:** 30, derived. FE1 pro forma (31 days Laem Chabang–Rotterdam via Suez, ~9,550 nm, ~3.5 port days) implies ~14.5 knots. Applied to ~10,500 nm Shanghai–Rotterdam = ~30 sea days. Consistent with UNCTAD's ~31 days Shenzhen–Rotterdam via Suez. Cape routing adds ~10 days.
 - **Market regime scenario:** COVID disruption period defined by events (Jul 2021 – Aug 2022), not by rate threshold, to avoid selecting data on the outcome variable. P(loss): full sample 14.33%, post-COVID 18.77%. Downside (5th pct) nearly unchanged, upside (95th pct) roughly halved. Result presented as a range rather than a single number.
+-  **Route scenario (Suez vs Cape):** Cape = 40 sea days, no Suez toll, no war risk, ETS leg share 0.84. P(loss) Suez 16.59% / Cape 21.84% (full sample), Suez 21.85% / Cape 28.44% (post-COVID). Suez median result ~$680k higher per voyage. Cape becomes preferable at war-risk premium above ~1.9% of hull value ($50m). Older, lower-value vessels have a lower break-even disadvantage, consistent with carriers returning older 8–9k TEU ships to Suez first.
 
 ## Open questions
 - [ ] Reference vessel size (~7–9k TEU secondary service vs. mainline ULCV)
