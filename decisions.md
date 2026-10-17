@@ -27,7 +27,8 @@ One line per decision: what was decided and why. Newest at the bottom.
  Effect: P(loss) 17.17% → 20.20% (+3.0 pp). Larger than expected because many 2025–26 freight months lie just above scenario-specific break-even levels ($1,800–2,400).
 - **EU ETS:** Included for the Tanjung Pelepas → Rotterdam leg. 50% coverage (voyage into EU from non-EU port), 100% phase-in (2026), CO2 factor 3.114, EUA $96/t (Aug 2026 avg €82.3). Leg share 0.8 is an estimate from distances. Rotterdam at-berth emissions not included in V1. Cost ≈ $347k per voyage. P(loss) 20.20% → 23.34%.
 - **Pairing effect depends on cost level:** At current costs, paired vs independent differs by only ~0.1 pp (vs −0.74 pp earlier), because the months near break-even (early 2026) combine low freight with high oil.
-- - **Equipment cost:** $200/FEU (synthetic). Container lease ~$50/FEU (lessor rates $0.35–0.65/TEU/day, ~50 days per leg) + empty repositioning ~$150/FEU (between top-down estimate of $100–160 from BCG's 5–8% of operating costs and bottom-up ~$250–300). Weakest input in the model, range $100–350 to be tested in sensitivity analysis. P(loss) 23.34% → 27.63%.
+- **Equipment cost:** $200/FEU (synthetic). Container lease ~$50/FEU (lessor rates $0.35–0.65/TEU/day, ~50 days per leg) + empty repositioning ~$150/FEU (between top-down estimate of $100–160 from BCG's 5–8% of operating costs and bottom-up ~$250–300). Weakest input in the model, range $100–350 to be tested in sensitivity analysis. P(loss) 23.34% → 27.63%.
+- **Reference vessel: NYK Venus** (IMO 9312793). 9,012 TEU, GT 97,825, built 2007. Deployed on ONE FE1 Asia–North Europe. No scrubber fitted (ShipNext, single source), so burns VLSFO. Fuel consumption 75.1 t/day from own MRV 2025 record. Replaces CMA CGM EXEMPLARITY, which operates on a Mediterranean–Caribbean service and was not representative of the route.
 
 ## Open questions
 - [ ] Reference vessel size (~7–9k TEU secondary service vs. mainline ULCV)
