@@ -38,6 +38,8 @@ One line per decision: what was decided and why. Newest at the bottom.
 - **Sea days:** 30, derived. FE1 pro forma (31 days Laem Chabang–Rotterdam via Suez, ~9,550 nm, ~3.5 port days) implies ~14.5 knots. Applied to ~10,500 nm Shanghai–Rotterdam = ~30 sea days. Consistent with UNCTAD's ~31 days Shenzhen–Rotterdam via Suez. Cape routing adds ~10 days.
 - **Market regime scenario:** COVID disruption period defined by events (Jul 2021 – Aug 2022), not by rate threshold, to avoid selecting data on the outcome variable. P(loss): full sample 14.33%, post-COVID 18.77%. Downside (5th pct) nearly unchanged, upside (95th pct) roughly halved. Result presented as a range rather than a single number.
 -  **Route scenario (Suez vs Cape):** Cape = 40 sea days, no Suez toll, no war risk, ETS leg share 0.84. P(loss) Suez 16.59% / Cape 21.84% (full sample), Suez 21.85% / Cape 28.44% (post-COVID). Suez median result ~$680k higher per voyage. Cape becomes preferable at war-risk premium above ~1.9% of hull value ($50m). Older, lower-value vessels have a lower break-even disadvantage, consistent with carriers returning older 8–9k TEU ships to Suez first.
+-**Distribution tests:** Utilization weak (0.60/0.75/0.90) → 21.84%, strong (0.80/0.90/0.98) → 13.67%, swing 8.2 pp, the largest of all inputs. Delay low/high swing 2.6 pp, kept as is. Asymmetric effect because utilization is capped near full capacity.
+- **Limitation – independent utilization:** Utilization is sampled independently of freight rate. In reality, low-rate periods (e.g. 2023) coincide with overcapacity and lower load factors. P(loss) is therefore likely understated.
 
 ## Open questions
 - [ ] Reference vessel size (~7–9k TEU secondary service vs. mainline ULCV)
