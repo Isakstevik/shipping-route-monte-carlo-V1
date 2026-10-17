@@ -34,6 +34,8 @@ One line per decision: what was decided and why. Newest at the bottom.
 - **Open question:** Red Sea war-risk insurance premium not included. To be handled in Suez vs Cape scenario.
 - **Origin handling (THC):** Set to $0. Drewry WCI includes THC only where market practice is to include it. On Asia–Europe, origin and destination THC are billed separately to shipper and consignee, so terminal cost is offset by separate THC revenue. Kept in sensitivity analysis with range $0–150 in case THC revenue does not fully cover terminal cost.
 - **Model consistency check:** WCI explicitly includes EU ETS surcharge, equipment management fee, port dues and Suez surcharge. Revenue therefore contains the carrier's recovery of these costs, which are modelled on the cost side. No double counting.
+-  **Reference vessel is a class proxy:** NYK Venus operates on ONE FE1 (Laem Chabang–Cai Mep–Singapore–Rotterdam–Hamburg), not from Shanghai. The model keeps the Shanghai–Rotterdam route to match the WCI freight data, and uses NYK Venus as representative of a 9,000 TEU non-eco vessel.
+- **Sea days:** 30, derived. FE1 pro forma (31 days Laem Chabang–Rotterdam via Suez, ~9,550 nm, ~3.5 port days) implies ~14.5 knots. Applied to ~10,500 nm Shanghai–Rotterdam = ~30 sea days. Consistent with UNCTAD's ~31 days Shenzhen–Rotterdam via Suez. Cape routing adds ~10 days.
 
 ## Open questions
 - [ ] Reference vessel size (~7–9k TEU secondary service vs. mainline ULCV)
