@@ -25,6 +25,8 @@ One line per decision: what was decided and why. Newest at the bottom.
 - **VLSFO baseline must match Brent date:** vlsfo_baseline must be the VLSFO price observed in the same month as the latest Brent observation, otherwise all simulated fuel prices are biased.
 - **VLSFO baseline:** $822/mt, Singapore monthly average for Aug 2026 (Ship & Bunker), matching the month of the latest Brent observation. Singapore chosen because the service calls Tanjung Pelepas, adjacent to the Singapore bunkering hub. G20 average for the same month was $810/mt, so the choice has limited impact.
  Effect: P(loss) 17.17% → 20.20% (+3.0 pp). Larger than expected because many 2025–26 freight months lie just above scenario-specific break-even levels ($1,800–2,400).
+- **EU ETS:** Included for the Tanjung Pelepas → Rotterdam leg. 50% coverage (voyage into EU from non-EU port), 100% phase-in (2026), CO2 factor 3.114, EUA $96/t (Aug 2026 avg €82.3). Leg share 0.8 is an estimate from distances. Rotterdam at-berth emissions not included in V1. Cost ≈ $347k per voyage. P(loss) 20.20% → 23.34%.
+- **Pairing effect depends on cost level:** At current costs, paired vs independent differs by only ~0.1 pp (vs −0.74 pp earlier), because the months near break-even (early 2026) combine low freight with high oil.
 
 ## Open questions
 - [ ] Reference vessel size (~7–9k TEU secondary service vs. mainline ULCV)
