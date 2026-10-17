@@ -32,6 +32,8 @@ One line per decision: what was decided and why. Newest at the bottom.
 - - **Charter rate:** $76,500/day, MSI 1-yr TC for 8.5k TEU non-eco (Dec 2025). NYK Venus (2007) is non-eco. Market ~8% firmer in Aug 2026 (Harpex), so likely conservative.
 - **Suez toll:** $500,000/transit, estimate for ~9k TEU within published range $400–700k, incl. 12% container surcharge from 15 Jul 2026. Exact SCNT not public. Range $400–600k.
 - **Open question:** Red Sea war-risk insurance premium not included. To be handled in Suez vs Cape scenario.
+- **Origin handling (THC):** Set to $0. Drewry WCI includes THC only where market practice is to include it. On Asia–Europe, origin and destination THC are billed separately to shipper and consignee, so terminal cost is offset by separate THC revenue. Kept in sensitivity analysis with range $0–150 in case THC revenue does not fully cover terminal cost.
+- **Model consistency check:** WCI explicitly includes EU ETS surcharge, equipment management fee, port dues and Suez surcharge. Revenue therefore contains the carrier's recovery of these costs, which are modelled on the cost side. No double counting.
 
 ## Open questions
 - [ ] Reference vessel size (~7–9k TEU secondary service vs. mainline ULCV)
