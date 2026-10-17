@@ -29,6 +29,9 @@ One line per decision: what was decided and why. Newest at the bottom.
 - **Pairing effect depends on cost level:** At current costs, paired vs independent differs by only ~0.1 pp (vs −0.74 pp earlier), because the months near break-even (early 2026) combine low freight with high oil.
 - **Equipment cost:** $200/FEU (synthetic). Container lease ~$50/FEU (lessor rates $0.35–0.65/TEU/day, ~50 days per leg) + empty repositioning ~$150/FEU (between top-down estimate of $100–160 from BCG's 5–8% of operating costs and bottom-up ~$250–300). Weakest input in the model, range $100–350 to be tested in sensitivity analysis. P(loss) 23.34% → 27.63%.
 - **Reference vessel: NYK Venus** (IMO 9312793). 9,012 TEU, GT 97,825, built 2007. Deployed on ONE FE1 Asia–North Europe. No scrubber fitted (ShipNext, single source), so burns VLSFO. Fuel consumption 75.1 t/day from own MRV 2025 record. Replaces CMA CGM EXEMPLARITY, which operates on a Mediterranean–Caribbean service and was not representative of the route.
+- - **Charter rate:** $76,500/day, MSI 1-yr TC for 8.5k TEU non-eco (Dec 2025). NYK Venus (2007) is non-eco. Market ~8% firmer in Aug 2026 (Harpex), so likely conservative.
+- **Suez toll:** $500,000/transit, estimate for ~9k TEU within published range $400–700k, incl. 12% container surcharge from 15 Jul 2026. Exact SCNT not public. Range $400–600k.
+- **Open question:** Red Sea war-risk insurance premium not included. To be handled in Suez vs Cape scenario.
 
 ## Open questions
 - [ ] Reference vessel size (~7–9k TEU secondary service vs. mainline ULCV)
