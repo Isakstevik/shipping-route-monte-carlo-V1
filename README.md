@@ -129,4 +129,4 @@ shipping-route-monte-carlo-V1/
 
 Open `notebooks/10_monte_carlo.ipynb` in Google Colab and choose **Runtime → Run all**. The notebook reads all data directly from this repository, so nothing needs to be uploaded. Results are reproducible with seed 42.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Isakstevik/shipping-route-monte-carlo-V1/blob/main/notebooks/10_monte_carlo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Isakstevik/shipping-route-monte-carlo-V1/blob/main/notebook/10_monte_carlo.ipynb)
