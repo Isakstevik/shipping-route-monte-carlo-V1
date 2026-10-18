@@ -114,15 +114,15 @@ Every modelling decision and the reasoning behind it is written down in [`decisi
 ```
 shipping-route-monte-carlo-V1/
 ├── data/
-│   ├── raw/                         data as downloaded or collected
-│   └── processed/                   cleaned data used by the model
-├── notebooks/
+│   ├── processed/                   cleaned data used by the model
+│   └── raw/                         data as downloaded or collected
+├── notebook/
 │   ├── 01_fuel_price.ipynb          oil price analysis
 │   ├── 02_fuel_consumption.ipynb    fuel consumption and choice of ship
 │   ├── 03_freight_rate.ipynb        freight rate analysis
 │   └── 10_monte_carlo.ipynb         simulation, sensitivity and scenarios
-├── decisions.md                     every modelling decision and why
-└── README.md
+├── README.md
+└── decisions.md                     every modelling decision and why
 ```
 
 ## How to run it
