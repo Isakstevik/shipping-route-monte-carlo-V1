@@ -1,167 +1,130 @@
-# Shipping Voyage Monte Carlo — Asia → Northern Europe
+# Shipping Voyage Monte Carlo: Asia to Northern Europe
 
-**What is the probability that a westbound Asia–Northern Europe container voyage produces a negative voyage result?**
+How likely is it that a container ship loses money on a westbound voyage from Shanghai to Rotterdam?
 
-A Monte Carlo simulation of 100,000 voyages on the Shanghai → Rotterdam trade, built on free public data: historical freight rates, oil prices, EU emissions data and published market benchmarks.
+I built this project to answer that question with free, public data. The model simulates 100,000 voyages, each with a different combination of freight rate, fuel price, cargo volume and port delay, and counts how many of them end in a loss.
 
----
+## The short answer
 
-## Key result
-
-Depending on market regime, routing and how vessel utilization behaves, the probability of a loss-making westbound voyage ranges from roughly **17% to 29%**.
+Somewhere between **17% and 29%**, depending on the market, the route and how full the ship is.
 
 | Scenario | P(loss) | Median result |
 |---|---|---|
-| **Base case** — Suez, full sample (Jul 2021 – Aug 2026) | **16.6%** | $6.5M |
-| Post-COVID sample only (Sep 2022 – Aug 2026) | 21.9% | $3.8M |
-| Cape of Good Hope routing | 21.8% | $5.9M |
-| Utilization linked to freight market | 21.9% | $6.0M |
-| Post-COVID + Cape routing | 28.4% | $3.1M |
-| Post-COVID + linked utilization | 28.5% | $2.7M |
+| **Base case** (Suez, all data Jul 2021 to Aug 2026) | **16.6%** | \$6.5M |
+| Without the COVID boom (Sep 2022 to Aug 2026) | 21.9% | \$3.8M |
+| Around the Cape of Good Hope | 21.8% | \$5.9M |
+| Cargo volume drops when rates are low | 21.9% | \$6.0M |
+| No COVID boom, Cape routing | 28.4% | \$3.1M |
+| No COVID boom, cargo volume linked to rates | 28.5% | \$2.7M |
 
-Base case distribution: mean $13.3M, 5th percentile −$1.5M, 95th percentile $46.9M. The distribution is strongly right-skewed. A typical voyage earns around $6.5M, while the 2021–22 boom months pull the mean far above the median.
+In the base case, a typical voyage earns about \$6.5M. The average is much higher, at \$13.3M, because the 2021 and 2022 boom months produced enormous results. In the worst 5% of cases the voyage loses \$1.5M or more.
 
-**Break-even freight rate** at baseline assumptions: about **$1,700 per FEU**.
+The ship breaks even at a freight rate of about **\$1,700 per FEU** (40-foot container).
 
----
+## What I found
 
-## Key findings
+**Freight rates drive almost everything.** The risk of a loss comes down to how often the market falls below break-even. Because the model draws from 62 real months, and several of them sit just above break-even (\$1,590 to \$1,650 in 2023 and autumn 2025), small cost changes can move the result more than you would expect.
 
-**1. Freight rate is the dominant risk, and P(loss) moves in steps.**
-Loss probability is driven mainly by how often the market falls below break-even. Because the freight sample consists of 62 observed months, several of which cluster at $1,590–1,650 (2023 and autumn 2025), small cost changes can move P(loss) by more than expected when break-even crosses one of these months.
+**Ship size mattered more than any single cost.** Switching from a 7,000 TEU placeholder to a 9,000 TEU ship lowered break-even by about \$550 per FEU and cut the probability of a loss by more than half.
 
-**2. The vessel choice mattered more than any single cost.**
-Moving from a ~7,000 TEU placeholder to a 9,000 TEU reference vessel cut break-even by roughly $550/FEU and P(loss) by more than half. Economies of scale are not just theory in this market.
+**Suez is better than the Cape, unless insurance gets very expensive.** Going through Suez saves about \$680k per voyage, even after the canal toll and war-risk insurance. The Cape only wins if the insurance premium rises above roughly 1.9% of the ship's value. Since the premium is a percentage of value, older and cheaper ships can go back through Suez first. That matches what carriers actually did in late 2026, when older 8,000 to 9,000 TEU ships returned to the canal while larger, newer ones stayed on the Cape route.
 
-**3. Suez beats Cape, unless war-risk insurance exceeds ~1.9% of hull value.**
-Suez saves around $680k per voyage after paying the canal toll and a $250k war-risk premium. Cape becomes preferable only when the premium exceeds roughly 1.9% of a $50M hull. Because the premium is a percentage of hull value, older and cheaper vessels can return to Suez first. This is consistent with carriers sending older 8–9k TEU ships back through the canal in late 2026 while larger, newer ships stay on the Cape.
+**Insurance matters more than the canal toll.** In the sensitivity analysis, uncertainty about the war-risk premium moves the result twice as much as the toll itself.
 
-**4. Insurance uncertainty matters more than the canal toll itself.**
-In the sensitivity analysis, the war-risk premium moves P(loss) twice as much as the Suez toll.
+**The most important assumption is also the weakest.** How full the ship is (utilization) has more effect than any cost, but there is no free data on it. If utilization falls when rates are low, which is likely, the probability of a loss rises by 5 to 7 percentage points. The base case probably understates the risk.
 
-**5. Utilization is the most important assumption, and the least data-backed.**
-Shifting the utilization distribution moves P(loss) by 8.2 percentage points, more than any cost input. Linking utilization to the freight market (weaker load factors when rates are below median) raises P(loss) by 5–7 points. The independent base case therefore likely understates risk.
+## What moves the result
 
----
+Each input was set to a low and a high value while everything else stayed the same.
 
-## What drives the risk
-
-One-at-a-time sensitivity of P(loss), using the same 100,000 random draws for every test:
-
-| Input | Range tested | Swing in P(loss) |
+| Input | Range tested | Change in P(loss) |
 |---|---|---|
-| Utilization distribution | weak (0.60/0.75/0.90) to strong (0.80/0.90/0.98) | 8.2 pp |
-| Charter rate | $65,000 – $90,500/day | 7.8 pp |
-| Equipment cost | $100 – $350/FEU | 7.6 pp |
-| Sea days | 28 – 33 | 5.8 pp |
-| Fuel consumption | 65 – 86 t/day | 4.6 pp |
-| Origin handling (THC) | $0 – $150/FEU | 4.1 pp |
-| War-risk premium | $100k – $500k | 3.4 pp |
-| Delay distribution | low to high | 2.6 pp |
-| Port days | 4 – 7 | 2.0 pp |
-| Suez toll | $400k – $600k | 1.7 pp |
-| Port dues | $80k – $240k | 1.3 pp |
-| EUA price | $70 – $110/t CO₂ | 1.0 pp |
-| ETS leg share | 0.7 – 0.9 | 0.7 pp |
+| Utilization | weak to strong | 8.2 pp |
+| Charter rate | \$65,000 to \$90,500 per day | 7.8 pp |
+| Equipment cost | \$100 to \$350 per FEU | 7.6 pp |
+| Sea days | 28 to 33 | 5.8 pp |
+| Fuel consumption | 65 to 86 t/day | 4.6 pp |
+| Origin terminal handling | \$0 to \$150 per FEU | 4.1 pp |
+| War-risk premium | \$100k to \$500k | 3.4 pp |
+| Port delay | low to high | 2.6 pp |
+| Port days | 4 to 7 | 2.0 pp |
+| Suez toll | \$400k to \$600k | 1.7 pp |
+| Port dues | \$80k to \$240k | 1.3 pp |
+| Carbon price (EUA) | \$70 to \$110 per t CO₂ | 1.0 pp |
+| EU emissions share | 0.7 to 0.9 | 0.7 pp |
 
-The sensitivity analysis was used to decide where further research was worth the effort. Port dues, for example, remain placeholders because tripling them moves P(loss) by only about one percentage point.
+I used this table to decide where more research was worth it. Port dues are still rough estimates, for example, because tripling them barely changes the answer.
 
----
+## How the model works
 
-## Method
-
-### Economic model
+Each voyage is calculated like this:
 
 ```
 Voyage result = Revenue − Voyage costs
 
-Revenue      = Freight rate (USD/FEU) × Loaded FEU
-Loaded FEU   = Capacity (TEU) × Utilization / 2
-
-Voyage costs = Fuel + Charter hire + Port dues + Suez toll + War-risk premium
-             + EU ETS + FuelEU Maritime + Equipment + Origin handling
+Revenue       = Freight rate × Containers carried
+Costs         = Fuel + Ship charter + Port dues + Suez toll + War-risk insurance
+              + EU carbon costs (ETS and FuelEU) + Container equipment
 ```
 
-The model takes a **time-charter perspective**. The operator pays charter hire, while crew, maintenance and hull insurance are covered by the owner within the hire. Adding them separately would double count.
+The model looks at the voyage from the point of view of a carrier that charters the ship. Crew, maintenance and hull insurance are paid by the owner and included in the daily charter rate, so they are not added separately.
 
-The result is a **voyage result for the westbound leg**, not company profit. Overhead is excluded, and the eastbound return leg, with lower rates and utilization, is not modelled.
+The result covers the **westbound leg only**. It is not company profit. Overhead and the return trip to Asia, where rates and volumes are lower, are left out.
 
-### Uncertainty
+**Where the uncertainty comes from**
 
-| Variable | Method |
-|---|---|
-| Freight rate + fuel price | **Paired bootstrap**: each simulation draws one historical month and uses both the freight rate and the Brent level from that month |
-| Utilization | Triangular distribution (0.70 / 0.85 / 0.98), synthetic |
-| Port delay | Triangular distribution (0 / 1 / 7 days), synthetic |
+- **Freight rate and fuel price** are drawn together from the same historical month. If a simulation picks June 2022, it uses both the freight rate and the oil price from June 2022. This keeps combinations realistic. Drawing them separately could pair a 2023 low freight rate with 2022 peak fuel prices, which never happened.
+- **Utilization** and **port delay** are drawn from triangular distributions, since no free data exists.
 
-Fuel price = VLSFO baseline × (Brent that month / latest Brent). The pairing preserves the observed co-movement between freight and oil (correlation 0.29). Sampling them independently would combine, for example, a 2023 trough rate with 2022 peak fuel prices, a combination that never occurred.
+**The reference ship** is NYK Venus: 9,012 TEU, built 2007, no scrubber, so it burns standard low-sulphur fuel (VLSFO). In reality it sails from Southeast Asia, not Shanghai. I use it to represent a typical ship of its size, while keeping the Shanghai to Rotterdam route so the freight data matches.
 
-### Reference vessel
+## Data
 
-**NYK Venus** (IMO 9312793): 9,012 TEU, built 2007, no scrubber (burns VLSFO). The vessel operates on ONE's FE1 service from Southeast Asia, not from Shanghai. It is used as a **class proxy** for a 9,000 TEU non-eco vessel, while the route is kept as Shanghai–Rotterdam to match the freight data.
+| Input | Value | Source |
+|---|---|---|
+| Freight rate | 62 monthly values | Drewry World Container Index, Shanghai to Rotterdam |
+| Oil price | Monthly | FRED (Brent crude), used as a proxy for marine fuel |
+| Fuel price today | \$822 per tonne | Singapore VLSFO, Aug 2026 (Ship & Bunker) |
+| Fuel consumption | 75.1 t/day | EU emissions data (MRV 2025) for NYK Venus |
+| Charter rate | \$76,500 per day | Market benchmark for this ship size (MSI, Dec 2025) |
+| Sea days | 30 | Calculated from ONE's published schedule |
+| Suez toll | \$500,000 | Estimate from published ranges |
+| War-risk insurance | \$250,000 | About 0.5% of an estimated \$50M ship value |
+| EU carbon costs | about \$335,000 | Calculated from EU rules and the Aug 2026 carbon price |
+| Equipment | \$200 per FEU | Own estimate (container lease and empty returns) |
+| Port dues | \$30,000 per call | Rough estimate, low impact |
 
----
+Free historical freight data does not exist as a download, so I collected the 62 monthly values by hand (with help from Claude) from Drewry's weekly reports in the shipping press. I always used the first report of each month, so no month was picked because of its value. 49 values were read directly, 7 were calculated exactly from the next week's report, and 6 are close approximations. Every value has its source link in the raw file.
 
-## Data and assumptions
+Drewry's index includes surcharges for EU carbon costs, equipment, port dues and Suez, so the revenue side already contains what carriers charge to cover the costs the model subtracts. Nothing is counted twice.
 
-Every fixed number in the model carries its source and type in a comment in the input cell, and all decisions are logged in [`decisions.md`](decisions.md).
-
-| Input | Value | Source | Type |
-|---|---|---|---|
-| Freight rate | 62 months | Drewry WCI Shanghai–Rotterdam, first assessment each month, Jul 2021 – Aug 2026 | Data |
-| Oil price | Monthly | FRED `MCOILBRENTEU` (Brent) | Proxy for VLSFO |
-| VLSFO baseline | $822/mt | Singapore monthly average, Aug 2026 (Ship & Bunker) | Data |
-| Fuel consumption | 75.1 t/day | EU THETIS-MRV 2025, NYK Venus | Data |
-| Charter rate | $76,500/day | MSI 1-yr TC, 8.5k TEU non-eco, Dec 2025 | Benchmark |
-| Sea days | 30 | Derived from ONE FE1 pro forma speed (~14.5 kn) | Derived |
-| Suez toll | $500,000 | Published range for ~9k TEU incl. 2026 surcharge | Estimate |
-| War-risk premium | $250,000 | ~0.5% of estimated $50M hull value | Estimate |
-| EU ETS | ~$270,000 | 50% coverage, 100% phase-in 2026, EUA $96/t | Derived |
-| FuelEU Maritime | ~$65,000 | Penalty-based upper bound | Derived |
-| Equipment | $200/FEU | Lease + empty repositioning | Synthetic |
-| Origin THC | $0 | Excluded from WCI on Asia–Europe (Drewry methodology) | Data |
-| Port dues | $30,000/call | Placeholder, low sensitivity | Placeholder |
-
-**Freight data quality:** of the 62 monthly values, 49 were read directly from Drewry reports, 7 were derived exactly from the following week's report, and 6 are approximations from rounded percentages (all flagged, deviation under 1% where verified).
-
-**Consistency check:** Drewry's WCI explicitly includes the EU ETS surcharge, equipment management fee, port dues and Suez surcharge, while excluding THC on this route. Revenue therefore contains the carrier's recovery of the costs modelled on the cost side, with no double counting.
-
----
+Every modelling decision and the reasoning behind it is written down in [`decisions.md`](decisions.md).
 
 ## Limitations
 
-- **Westbound leg only.** The return leg is not modelled, so results overstate round-trip profitability.
-- **Utilization is synthetic.** No free route-level load-factor data exists. It is the most influential assumption in the model.
-- **Utilization is independent of freight in the base case.** The linked scenario shows this likely understates P(loss) by 5–7 points.
-- **Discrete freight sample.** 62 months from a period dominated by unusual events (COVID, Red Sea crisis, Hormuz). No calm, "normal" period exists in the data.
-- **Spot rates only.** A large share of Asia–Europe cargo moves on contract rates, which are less volatile.
-- **Class proxy vessel.** NYK Venus's specifications are used for a Shanghai-origin service it does not operate on.
-- **Methodology change in source data.** Drewry widened its outlier criteria in week 20 of 2021.
+- Only the westbound leg is modelled, so the results look better than a full round trip would.
+- Utilization has no data behind it and is the assumption that matters most.
+- In the base case, utilization does not depend on freight rates, which likely understates the risk.
+- The freight data covers an unusual period (COVID, the Red Sea crisis, Hormuz). There is no calm, normal period in the sample.
+- Only spot rates are used. Much Asia to Europe cargo moves on contracts, which are more stable.
+- NYK Venus represents a ship class. It does not actually sail this exact route.
 
----
-
-## Repository structure
+## Repository
 
 ```
 shipping-route-monte-carlo-V1/
 ├── data/
-│   ├── raw/                  ← data as received, never edited
-│   └── processed/            ← cleaned data read by the model
+│   ├── raw/                         data as downloaded or collected
+│   └── processed/                   cleaned data used by the model
 ├── notebooks/
-│   ├── 01_fuel_price.ipynb          ← Brent analysis
-│   ├── 02_fuel_consumption.ipynb    ← EU MRV analysis
-│   ├── 03_freight_rate.ipynb        ← Drewry WCI analysis
-│   └── 10_monte_carlo.ipynb         ← simulation, sensitivity, scenarios
-├── decisions.md              ← log of every modelling decision and why
+│   ├── 01_fuel_price.ipynb          oil price analysis
+│   ├── 02_fuel_consumption.ipynb    fuel consumption and choice of ship
+│   ├── 03_freight_rate.ipynb        freight rate analysis
+│   └── 10_monte_carlo.ipynb         simulation, sensitivity and scenarios
+├── decisions.md                     every modelling decision and why
 └── README.md
 ```
 
-The pipeline is: **raw data → analysis notebook → processed data → Monte Carlo notebook**.
+## How to run it
 
-## How to run
-
-Open `notebooks/10_monte_carlo.ipynb` in Google Colab and select **Runtime → Run all**. All data is read directly from this repository, so no uploads are needed. Results are reproducible with seed 42.
-
-
-# shipping-route-monte-carlo-V1
-- **Limitation – discrete freight sample:** The freight bootstrap draws from 62 observed months. P(loss) therefore changes in steps when break-even crosses an observed rate. Several months cluster at $1,590–1,650 (2023 and autumn 2025), which makes the result sensitive to small cost changes in that range.
+Open `notebooks/10_monte_carlo.ipynb` in Google Colab and choose **Runtime → Run all**. The notebook reads all data directly from this repository, so nothing needs to be uploaded. Results are reproducible with seed 42.
